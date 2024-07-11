@@ -1,4 +1,4 @@
-package com.utssmartcon;
+package com.pyramids;
 
 import android.app.Application;
 import com.facebook.react.PackageList;

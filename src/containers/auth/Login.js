@@ -129,8 +129,8 @@ const Login = () => {
       } else {
         Alert.alert('Invalid Credentials')
       }
-    }).catch(()=>{
-      Alert.alert('Invalid Credentials')
+    }).catch((err)=>{
+      Alert.alert(err.msg)
     })
   };
 

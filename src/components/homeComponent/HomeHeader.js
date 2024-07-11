@@ -120,7 +120,7 @@ function HomeHeader({user}) {
       
       <View style={localStyles.textContainer}>
         <EText type="m16" numberOfLines={1} color={colors.white}>
-          Welcome to Smartcon
+          Welcome to Pyramid
         </EText>
         <EText type="B20" numberOfLines={1} color={colors.white}>
           {user && user.first_name}

@@ -93,13 +93,13 @@ android {
 
     compileSdkVersion rootProject.ext.compileSdkVersion
 
-    namespace "com.utssmartcon"
+    namespace "com.pyramids"
     defaultConfig {
-        applicationId "com.utssmartcon"
+        applicationId "com.pyramids"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 1
-        versionName "1.0"
+        versionCode 3
+        versionName "1.0.2"
         vectorDrawables.useSupportLibrary = true
     }
 

@@ -97,6 +97,8 @@ export default function HomeTab({navigation}) {
         .then(({data}) => {
           setCurrentInsertId(data.data.insertId);
           setInsertedData(user);
+          console.log('attendance res',data.data);
+          console.log('attendance resp',data.resp);
           Alert.alert('Day Attendance inserted successfully.');
           navigation.navigate('TaskTab', {insertedData: user});
         })
@@ -120,6 +122,8 @@ export default function HomeTab({navigation}) {
         .then(({data}) => {
           setCurrentInsertId(data.data.insertId);
           setInsertedData(user);
+          console.log('attendance resp',data.data);
+          console.log('attendance resp',data.resp);
           Alert.alert('Night Attendance inserted successfully.');
           navigation.navigate('TaskTab', {insertedData: user});
         })
@@ -136,7 +140,7 @@ export default function HomeTab({navigation}) {
     const day_checkOut_longitude = location.longitude;
     const night_checkOut_latitude = location.latitude;
     const night_checkOut_longitude = location.longitude;
-
+console.log('checkout',selectedProject);
     if (lastClickedButton === 'day') {
       const user = {
         day_check_out_time: currentTime,
@@ -146,14 +150,18 @@ export default function HomeTab({navigation}) {
         day_checkOut_latitude: day_checkOut_latitude,
         day_checkOut_longitude: day_checkOut_longitude,
       };
+      console.log('checkoutuser',user);
       api
         .post('/attendance/updateAppAttendance', user)
-        .then(() => {
+        .then((res) => {
           Alert.alert('Day check-out time inserted successfully.');
           setInsertedData(user);
+          console.log('user',user);
+          console.log('res',res);
           navigation.navigate('TaskTab', {insertedData: user});
         })
-        .catch(() => {
+        .catch((err) => {
+          console.log('err',err);
           Alert.alert('Network connection error.');
         });
     } else if (lastClickedButton === 'night') {
@@ -168,9 +176,11 @@ export default function HomeTab({navigation}) {
 
       api
         .post('/attendance/updateAppAttendance', user)
-        .then(() => {
+        .then((res) => {
           Alert.alert('Night check-out time inserted successfully.');
           setInsertedData(user);
+          console.log('user',user);
+          console.log('res',res);
           navigation.navigate('TaskTab', {insertedData: user});
         })
         .catch(() => {
