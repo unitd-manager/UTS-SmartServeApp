@@ -93,9 +93,9 @@ android {
 
     compileSdkVersion rootProject.ext.compileSdkVersion
 
-    namespace "com.pyramids"
+    namespace "com.utssmartconserve"
     defaultConfig {
-        applicationId "com.pyramids"
+        applicationId "com.utssmartconserve"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 3
